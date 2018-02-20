@@ -19,4 +19,7 @@ ADD assets/config.inc.php /usr/share/self-service-password/conf/config.inc.php
 RUN mkdir /etc/service/apache2
 ADD assets/apache2.sh /etc/service/apache2/run
 
+# Add Vault logo
+ADD assets/vault.png /usr/share/self-service-password/images/vault.png
+
 EXPOSE 80
