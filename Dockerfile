@@ -19,7 +19,11 @@ ADD assets/config.inc.php /usr/share/self-service-password/conf/config.inc.php
 RUN mkdir /etc/service/apache2
 ADD assets/apache2.sh /etc/service/apache2/run
 
-# Add Vault logo
+# Add Vault logo and favicon
 ADD assets/vault.png /usr/share/self-service-password/images/vault.png
+ADD assets/favicon.ico /usr/share/self-service-password/images/favicon.ico
+
+# Fix title for the webpage
+RUN sed -i 's/Self service password/Change single-factor password/g' /usr/share/self-service-password/lang/en.inc.php
 
 EXPOSE 80
